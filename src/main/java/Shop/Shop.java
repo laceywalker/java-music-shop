@@ -27,13 +27,15 @@ public class Shop implements ISell {
     public void removeItemsFromStock(ISell item){
                 this.stock.remove(item);
 
-        }
+    }
 
     @Override
     public double calculateMarkup(){
         double markupAmount = 0;
+
         for(ISell item : this.stock){
             markupAmount = item.getPriceSold() - item.getPriceBought();
+
         }
         return markupAmount;
     }
@@ -54,5 +56,16 @@ public class Shop implements ISell {
             priceBought = this.getPriceBought();
         }
         return priceBought;
+    }
+
+
+    public double getTotalProfit(){
+        double totalProfit = 0;
+
+        for (ISell item : this.stock){
+            totalProfit = this.calculateMarkup();
+        }
+
+        return totalProfit;
     }
 }
