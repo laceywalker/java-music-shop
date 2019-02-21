@@ -18,4 +18,9 @@ public class XylophoneTest {
     public void hasMallets(){
         assertEquals(true, xylophone.getMallets());
     }
+
+    @Test
+    public void canPlay(){
+        assertEquals("ding dong bang bong", xylophone.play());
+    }
 }

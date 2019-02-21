@@ -1,6 +1,6 @@
 package Instrument;
 
-public class Xylophone extends Instrument {
+public class Xylophone extends Instrument implements IPlay {
 
     private boolean malletsIncluded;
 
@@ -11,5 +11,10 @@ public class Xylophone extends Instrument {
 
     public boolean getMallets() {
         return malletsIncluded;
+    }
+
+    @Override
+    public String play(){
+        return "ding dong bang bong";
     }
 }

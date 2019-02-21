@@ -1,6 +1,7 @@
 package Instrument;
 
-public class Piano extends Instrument {
+
+public class Piano extends Instrument implements IPlay  {
 
     private int numberOfLegs;
 
@@ -30,4 +31,9 @@ public class Piano extends Instrument {
         return numberOfLegs;
     }
 
+
+    @Override
+    public String play() {
+        return "note note note...keys making notes";
+    }
 }

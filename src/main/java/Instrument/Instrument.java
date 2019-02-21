@@ -1,6 +1,6 @@
 package Instrument;
 
-public abstract class Instrument {
+public abstract class Instrument  {
 
     protected String material;
     protected String color;
@@ -23,4 +23,6 @@ public abstract class Instrument {
     public String getModel() {
         return model;
     }
+
+
 }
