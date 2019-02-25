@@ -63,7 +63,7 @@ public class Shop implements ISell {
         double totalProfit = 0;
 
         for (ISell item : this.stock){
-            totalProfit = this.calculateMarkup();
+            totalProfit += this.calculateMarkup();
         }
 
         return totalProfit;

@@ -9,11 +9,13 @@ public class ShopTest {
 
     Shop shop;
     DrumSticks drumsticks;
+    DrumSticks boomsticks;
 
     @Before
     public void before(){
         shop = new Shop("Ray's Music Shop");
-        drumsticks = new DrumSticks(10, 5, "nice quality");
+        drumsticks = new DrumSticks(10, 15, "nice quality");
+        boomsticks = new DrumSticks(20, 25, "okay quality");
     }
 
     @Test
@@ -39,5 +41,18 @@ public class ShopTest {
         assertEquals(0, shop.getStock());
     }
 
+    @Test
+    public void canCalculateMarkup(){
+        shop.addItemsToStock(drumsticks);
+        assertEquals(5, shop.calculateMarkup(), 0.01);
+    }
+
+    @Test
+    public void canGetTotalProfit(){
+        shop.addItemsToStock(drumsticks);
+        shop.addItemsToStock(boomsticks);
+        assertEquals(2, shop.getStock());
+        assertEquals(10, shop.getTotalProfit(), 0.01);
+    }
 
 }
